@@ -16,14 +16,12 @@ public class FindArticleWithCommentResponse {
     private String title;
     private String content;
     private String author;
-    private List<CommentDTO> comments;
+    private List<Comment> comments;
     public FindArticleWithCommentResponse(Article article) {
         this.id = article.getId();
         this.title = article.getTitle();
         this.content = article.getContent();
         this.author = article.getAuthor();
-        this.comments = article.getComment().stream()
-                .map(comment -> new CommentDTO(comment))
-                .collect(Collectors.toList());
+        this.comments = article.getComment();
     }
 }

@@ -38,7 +38,7 @@ public class BlogService {
     public FindArticleWithCommentResponse getArticleWithComments(Long articleId){
         Article article=articleRepository.findById(articleId)
                 .orElseThrow(()->new IllegalArgumentException("Not found"));
-        List<CommentDTO> comments=commentRepository.findByArticleId(articleId);
+        List<Comment> comments=commentRepository.findByArticleId(articleId);
 
         return new FindArticleWithCommentResponse(
                 article.getId(),
