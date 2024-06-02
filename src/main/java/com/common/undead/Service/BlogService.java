@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,14 +39,19 @@ public class BlogService {
     public FindArticleWithCommentResponse getArticleWithComments(Long articleId){
         Article article=articleRepository.findById(articleId)
                 .orElseThrow(()->new IllegalArgumentException("Not found"));
-        List<Comment> comments=commentRepository.findByArticleId(articleId);
+        List<Comment> comments= commentRepository.findAllByArticleId(articleId);
 
+        List<CommentDTO> commentDTOS= new ArrayList<>();
+        //comment-->commentDTO로 service에서 바꿔야 함
+        for (Comment comment:comments){
+            commentDTOS.add(new CommentDTO(comment));//모델
+        }
         return new FindArticleWithCommentResponse(
                 article.getId(),
                 article.getTitle(),
                 article.getContent(),
                 article.getAuthor(),
-                comments
+                commentDTOS
         );
     }
 

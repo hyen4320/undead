@@ -24,7 +24,8 @@ public class AddCommentRequest {
 
     private LocalDateTime updatedAt=LocalDateTime.now();
 
-    public Comment toComment(){
+    public Comment toComment(){//DTO를 Entity로 Comment객체를 생성해서 setTitle을 빌더로 씀
+        //Setter보다는 Builder가 좋음
         return Comment.builder()
                 .author(author)
                 .comment(comment)
