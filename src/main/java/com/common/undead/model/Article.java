@@ -31,6 +31,6 @@ public class Article {
     private LocalDateTime createdAt=LocalDateTime.now();
 
     @JsonFormat(pattern = "yyyy.Mm.dd.HH:mm",timezone = "Asia/Seoul")
-    @Builder.Default
+    @Builder.Default//특정 필드값 초기화
     private LocalDateTime updatedAt=LocalDateTime.now();
 }
