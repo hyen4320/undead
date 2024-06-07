@@ -2,6 +2,7 @@ package com.common.undead.dto;
 
 import com.common.undead.model.Article;
 import com.common.undead.model.Comment;
+import com.common.undead.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Getter
 public class AddCommentRequest {
-    private String author;
+    private User author;
 
     private String comment;
 

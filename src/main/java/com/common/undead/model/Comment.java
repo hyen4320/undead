@@ -16,8 +16,9 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String author;//나중에 User로 바꿀 것임
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User author;//나중에 User로 바꿀 것임
 
     private String comment;
     @ManyToOne

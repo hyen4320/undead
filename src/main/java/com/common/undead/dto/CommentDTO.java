@@ -2,6 +2,7 @@ package com.common.undead.dto;
 
 import com.common.undead.model.Article;
 import com.common.undead.model.Comment;
+import com.common.undead.model.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +13,7 @@ import lombok.Setter;
 public class CommentDTO {
     private Long id;
     private String comment;
-    private String author;
+    private User author;
     private Long article_id;
     private Long originComment;
 

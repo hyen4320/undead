@@ -2,6 +2,7 @@ package com.common.undead.dto;
 
 import com.common.undead.model.Article;
 import com.common.undead.model.Comment;
+import com.common.undead.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +15,7 @@ import java.util.List;
 //게시글이랑 댓글 전부 찾기
 public class FindArticleResponse {
     private Long id;
-    private String author;
+    private User author;
     private String title;
     private String content;
     private List<Comment> comment;

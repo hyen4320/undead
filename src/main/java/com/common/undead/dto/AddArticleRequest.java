@@ -3,6 +3,7 @@ package com.common.undead.dto;
 
 import com.common.undead.model.Article;
 import com.common.undead.model.Comment;
+import com.common.undead.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ public class AddArticleRequest {
 
     private String content;
 
-    private String author;
+    private User author;
 
     private List<Comment> comment;
 
