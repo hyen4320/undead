@@ -19,13 +19,14 @@ public class Like {
     @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name="article_id")
     private Article article;//외래키를 기본키로 사용
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
+    private boolean likeStatus;
 
-    private Long likeCount;
-
-    private Long dislikeCount;
-
-    public void update(Long likeCount, Long dislikeCount) {
-        this.likeCount = likeCount;
-        this.dislikeCount = dislikeCount;
+    public void update(Article article, User user, boolean likeStatus) {
+        this.article = article;
+        this.user = user;
+        this.likeStatus = likeStatus;
     }
 }

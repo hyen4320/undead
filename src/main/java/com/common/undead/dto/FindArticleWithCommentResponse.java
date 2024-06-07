@@ -1,6 +1,7 @@
 package com.common.undead.dto;
 
 import com.common.undead.model.Article;
+import com.common.undead.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import com.common.undead.model.Comment;
@@ -15,7 +16,7 @@ public class FindArticleWithCommentResponse {
     private Long id;
     private String title;
     private String content;
-    private String author;
+    private User author;
     private List<CommentDTO> comments;
 //    public FindArticleWithCommentResponse(Article article) {
 //        this.id = article.getId();

@@ -22,8 +22,8 @@ public class Article {
     private String title;
 
     private String content;
-
-    private String author;
+    @ManyToOne
+    private User author;
     @OneToMany(mappedBy = "article")
     private List<Comment> comment;
     @JsonFormat(pattern = "yyyy.MM.dd.HH:mm",timezone = "Asia/Seoul")

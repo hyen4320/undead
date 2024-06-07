@@ -63,16 +63,7 @@ public class BlogService {
         Article article= articleRepository.findById(articleId).orElseThrow(()->new IllegalArgumentException("Not found"));
         Long id = article.getId();
         Like like=likeRepository.findById(id).orElseThrow(()->new IllegalArgumentException("Not found"));
-        if(request==0){
-            LikePlusRequest likes=new LikePlusRequest(like.getLikeCount()+1, like.getDislikeCount());
-            likeRepository.save(like);
-            return likes;
-        }
-        else{
-            LikePlusRequest likes=new LikePlusRequest(like.getLikeCount(), like.getDislikeCount()+1);
-            likeRepository.save(like);
-            return likes;
-        }
+        return null;
     }
 
 }
