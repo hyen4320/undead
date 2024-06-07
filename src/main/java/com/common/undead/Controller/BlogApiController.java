@@ -43,10 +43,10 @@ public class BlogApiController {
         FindArticleWithCommentResponse response= blogService.getArticleWithComments(id);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-
-    @PutMapping("/api/plusLike")
-    public ResponseEntity<LikePlusRequest> plusLike(@RequestBody LikePlusRequest request) {
-        LikePlusRequest like=blogService.LikeUp(request.getArticle(),request.getRequest());
-        return ResponseEntity.status(HttpStatus.CREATED).body(like);
-    }
+//
+//    @PutMapping("/api/plusLike")
+//    public ResponseEntity<LikePlusRequest> plusLike(@RequestBody LikePlusRequest request) {
+//        LikePlusRequest like=blogService.LikeUp(request.getArticle(),request.getRequest());
+//        return ResponseEntity.status(HttpStatus.CREATED).body(like);
+//    }
 }

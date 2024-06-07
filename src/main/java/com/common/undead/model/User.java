@@ -16,9 +16,9 @@ public class User {
     private String username;
     private String password;
     private String session;
-    @ManyToOne
-    @JoinColumn(name = "article_id")
-    private Article article;
+//    @ManyToOne
+//    @JoinColumn(name = "article_id")
+//    private Article article;
 
 
 }
